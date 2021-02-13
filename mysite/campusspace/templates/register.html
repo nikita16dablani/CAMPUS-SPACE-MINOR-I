@@ -1,0 +1,74 @@
+{%extends 'base.html'%}
+{% block content %}
+<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+
+			input{
+				border: none;
+				border-bottom: 1px solid ;
+				outline: none;
+				height: 50px;
+				width: 290px;
+				font-family:Work Sans;
+				font-size: 18px;
+				letter-spacing: 2px;
+
+			}
+			#parent_div{
+				display:flex;
+				align-items: center;
+				justify-content: center;
+				width:100vw;
+				height: 100vh;
+				background-color: #e6e6e6;
+			}
+			#child_div{
+				background-color: white;
+				height: 650px;
+				width: 380px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.5);
+			}
+			.center{
+				font-size:20px; letter-spacing: 5px;text-shadow: 2px 2px 4px #404040;
+			}
+		</style>
+<script>
+function myFunction() {
+  alert("I am an alert box!");
+}
+</script>
+	</head>
+	<body style="background-color: #e6e6e6;">
+		<div id="parent_div">
+			<div id="child_div">
+				<br><br>
+				<center class="center">
+				SIGN UP </center>
+				<br>
+                <form action="{%url 'register'%}" method="post">
+                    {% csrf_token%}
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="username" required autocomplete="off" placeholder="USERNAME"><br><br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<input type="text" name="fname" required autocomplete="off" placeholder="FIRST NAME"><br><br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="text" name="lname" required autocomplete="off" placeholder="LAST NAME"><br><br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="email" name="email" required autocomplete="off" placeholder="E-MAIL"><br><br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="password" name="password" required autocomplete="off" placeholder="PASSWORD"><br><br>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<input type="checkbox" name="" style="height: 15px; width: 15px;">&nbsp;Remember Me <br><br>
+				<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Already Register ? <a href="{% url 'login'%}">Sign In</a></p>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit"  onsubmit="myFunction()" style="width: 80px; height: 50px; background-color: #4dffdb ;border:none; border-radius: 7px;">Sign Up</button><br>
+                </form>
+            </div>
+
+		</div>
+	</body>
+{% endblock %}

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head><style >
+		*{
+			margin: 0;
+			padding: 0;
+			border: 0;
+			outline: 0;
+			user-select: none;
+		}
+		.outer{
+
+			height : 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-family: 'Poppins',sans-serif;
+			background: linear-gradient(45deg,#ff3385 50%,#ff0066 50%);
+
+		}
+		.main{
+			position: relative;
+			height: 400px;
+			width: 800px;
+			border-radius: 25px;
+			overflow: hidden;
+			background-color: white;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+		}
+		.left_side{
+			position: absolute;
+			left: 0;
+			width: 400px;
+			height: 100%;
+		}
+		.left_side img{
+			width: 100%;
+			height: 100%;
+		}
+		.right_side{
+			position: absolute;
+			width: 400px;
+			right: 0;
+			text-align: center;
+		}
+		.right_side h1{		margin: 15px 0;}
+		.right_side input{
+			margin: 15px 25px 0 0;
+			width: 250px;
+			height: 40px;
+			border-radius: 30px;
+			background: #d4d4d4	;
+			border: 1px solid #d4d4d4;
+			padding-left: 45px;
+			letter-spacing: .5px;
+			transition: all .4s;
+		}
+		.right_side input:focus{border: 1px solid red;}
+		.right_side input:valid{border: 1px solid green;}
+		.right_side .fas{
+			transform: translateX(35px);
+		}
+		.right_side button{
+			margin: 30px 0 ;
+			background :  #1a99ee;
+			color: #f1f1f1;
+			letter-spacing: .5px;
+			width: 295px;
+			height: 40px;
+			font-size: 16px;
+			border-radius: 20px;
+			cursor: pointer;
+			transition: 0.4s;
+		}
+		.right_side button:hover{
+			background: #198edb;
+		}
+		.right_side .fab{
+			cursor: pointer;
+			width: 40px;
+			height: 40px;
+			color: white;
+			line-height: 40px;
+			border-radius: 50%;
+			margin: 10px 30px;
+		}
+	</style>
+	<script src="https://kit.fontawesome.com/fbd47bad16.js" crossorigin="anonymous"></script>
+	<script>
+
+</script>
+</head>
+<div class="outer">
+	<div class="main">
+			<div class="left_side">
+				<img src="{%static '/imgs/blue.jpg'%}">
+			</div>
+			<div class="right_side">
+
+				<h1>Login</h1>
+				<form method="post" >
+					 {% csrf_token %}
+				<div>
+					<i class="fas fa-user"></i>
+					<input type="text" name="loginusername" placeholder="Enter Your Username" required>
+				</div>
+				<div>
+					<i class="fas fa-key"></i>
+					<input type="password" name="loginpassword" placeholder="Enter Password" required>
+				</div>
+				<button type="submit"  >Login</button>
+				<p><b>Not Register ? <a href="{% url 'register'%}">Register here</a></b></p>
+				</form>
+			</div>
+		</div>
+</div>
+{%endblock%}

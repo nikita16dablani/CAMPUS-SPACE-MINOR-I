@@ -1,0 +1,331 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+	<title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<style>
+<link href="https://fonts.googleapis.com/css2?family=Trispace:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+
+		}
+		body{background-color: black;}
+		.main{
+			width: 90vw;
+			height: 150vh;
+			margin: 50px;
+
+		}
+		.row{
+			padding: 30px;
+			width: 100%;
+			height: 65vh;
+			margin-bottom: 140px;
+
+		}
+		.box{
+			height: 55vh;
+			display: inline-flex;
+			width: 25vw;
+			margin: 25px;
+			border : 2px rgb(255,0,102);
+			box-shadow: 0 0 10px rgba(255, 255, 255,1);
+
+		}
+		.inner{
+			  position: relative;
+			  position: relative;
+			  width: 100%;
+			  height: 100%;
+			  text-align: center;
+			  transition: transform 0.5s;
+			  transform-style: preserve-3d;
+		}
+		.box:hover .inner {
+  			transform: rotateY(180deg);
+  		}
+  		.front, .back {
+			  position: absolute;
+			  width: 100%;
+			  height: 100%;
+			  backface-visibility: hidden;
+
+		}
+		.front {
+			  background-color: #bbb;
+			  color: black;
+			}
+
+		.back {
+			  background-color: black;
+			  color: white;
+			  transform: rotateY(180deg);
+			}
+			img{
+				width: 100%;
+				height: 100%;
+
+
+			}
+			.box h1{
+				font-family: sans-serif;font-variant: small-caps;
+			}
+			button{
+				cursor: pointer;
+
+				margin: 1.5rem;
+				width: 7rem;
+				height: 4rem;
+				letter-spacing: 1px;
+				border-radius: 0.3rem;
+				background: transparent;
+				overflow: hidden;
+				transition: .4s;
+			}
+			button:nth-child(odd){
+				color: #1ea0eb;
+				border: 1px solid;
+			}
+			button:nth-child(even){
+				color: #e6005c;
+				border: 1px solid;
+			}
+			button:nth-child(odd):hover{
+				background:#1ea0eb;
+				color: #222121;
+			}
+			button:nth-child(even):hover{
+				background:#e6005c;
+				color: #222121;
+			}
+			.front h1{
+				color:#1ea0eb;
+				text-decoration:underline;
+				font-variant: small-caps;
+
+			}
+	</style>
+</head>
+<div class="main">
+		<div class="row">
+			<div class="box">
+				<div class="inner">
+					<div class="front">
+						<img src="{%static '/imgs/cs.webp'%}" alt="Computer">
+						<h1>Computer Science And Engineering.</h1>
+					</div>
+					<div class="back">
+						<h1>your Semester :</h1>
+						<button>I semester
+							<span></span>
+						</button>
+						<button>II semester
+							<span></span>
+						</button><br>
+						<button>III semester
+							<span></span>
+						</button>
+						<button>IV semester
+							<span></span>
+						</button>
+						<button>V semester
+							<span></span>
+						</button>
+						<button>VI semester
+							<span></span>
+						</button><br>
+						<button>VII semester
+							<span></span>
+						</button>
+						<button>VIII semester
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="box">
+				<div class="inner">
+					<div class="front">
+					<img src="{%static '/imgs/it.jpg'%}" alt="it">
+						<h1>information technology</h1>
+					</div>
+					<div class="back">
+						<h1>your Semester :</h1>
+						<button>I semester
+							<span></span>
+						</button>
+						<button>II semester
+							<span></span>
+						</button><br>
+						<button>III semester
+							<span></span>
+						</button>
+						<button>IV semester
+							<span></span>
+						</button>
+						<button>V semester
+							<span></span>
+						</button>
+						<button>VI semester
+							<span></span>
+						</button><br>
+						<button>VII semester
+							<span></span>
+						</button>
+						<button>VIII semester
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="box">
+				<div class="inner">
+					<div class="front">
+						<img src="{%static '/imgs/mech.jpg'%}" alt="it">
+						<h1>Mechanical Engineering</h1>
+					</div>
+					<div class="back">
+						<h1>your Semester :</h1>
+						<button>I semester
+							<span></span>
+						</button>
+						<button>II semester
+							<span></span>
+						</button><br>
+						<button>III semester
+							<span></span>
+						</button>
+						<button>IV semester
+							<span></span>
+						</button>
+						<button>V semester
+							<span></span>
+						</button>
+						<button>VI semester
+							<span></span>
+						</button><br>
+						<button>VII semester
+							<span></span>
+						</button>
+						<button>VIII semester
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="box">
+				<div class="inner">
+					<div class="front">
+						<img src="{%static '/imgs/elec.webp'%}" alt="it">
+						<h1>Electronics and Communication</h1>
+					</div>
+					<div class="back">
+						<h1>your Semester :</h1>
+						<button>I semester
+							<span></span>
+						</button>
+						<button>II semester
+							<span></span>
+						</button><br>
+						<button>III semester
+							<span></span>
+						</button>
+						<button>IV semester
+							<span></span>
+						</button>
+						<button>V semester
+							<span></span>
+						</button>
+						<button>VI semester
+							<span></span>
+						</button><br>
+						<button>VII semester
+							<span></span>
+						</button>
+						<button>VIII semester
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="box">
+				<div class="inner">
+					<div class="front">
+						<img src="{%static '/imgs/ele.webp'%}" alt="it">
+						<h1>Electrical Engineering</h1>
+					</div>
+					<div class="back">
+						<h1>your Semester :</h1>
+						<button>I semester
+							<span></span>
+						</button>
+						<button>II semester
+							<span></span>
+						</button><br>
+						<button>III semester
+							<span></span>
+						</button>
+						<button>IV semester
+							<span></span>
+						</button>
+						<button>V semester
+							<span></span>
+						</button>
+						<button>VI semester
+							<span></span>
+						</button><br>
+						<button>VII semester
+							<span></span>
+						</button>
+						<button>VIII semester
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="box">
+				<div class="inner">
+					<div class="front">
+						<img src="{%static '/imgs/civil.webp'%}" alt="it">
+						<h1>Civil Engineering</h1>
+					</div>
+					<div class="back">
+						<h1>your Semester :</h1>
+						<button>I semester
+							<span></span>
+						</button>
+						<button>II semester
+							<span></span>
+						</button><br>
+						<button>III semester
+							<span></span>
+						</button>
+						<button>IV semester
+							<span></span>
+						</button>
+						<button>V semester
+							<span></span>
+						</button>
+						<button>VI semester
+							<span></span>
+						</button><br>
+						<button>VII semester
+							<span></span>
+						</button>
+						<button>VIII semester
+							<span></span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{%endblock%}

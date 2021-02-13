@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			.outer{
+				background-image: url('{%static '/imgs/bg2.jpg'%}');
+				height: 100vh;
+				width: 100vw;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+			}
+			.inner{
+
+				height:600px ;
+				width:1200px;
+				border-radius: 25px;
+			}
+			.row{
+				display: flex;
+				padding: 5px;
+				margin: 25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.row a{
+				color: black;
+			}
+			.member{
+				height: 200px;
+				width: 300px;
+				margin: 25px;
+				border-radius: 25px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			.member:hover{
+				box-shadow: 0 0 10px rgba(255,255,255,0.9);
+				cursor: pointer;
+			}
+
+		</style>
+</head>
+<div class="alert alert-success" style="margin-bottom: 0">
+			<strong>WELCOME !!! You Are Sucessfully Entered.</strong>.
+		</div>
+<div class="outer">
+			<div class="inner">
+				<div class="row">
+					<a href="{%url 'notes'%}">
+					<div class="member" style="background-color: #80aaff;">
+						<h1>NOTES</h1>
+					</div></a>
+					<a href="{% url 'notice'%}">
+					<div class="member" style="background-color:#ff99ff;" >
+						<h1>NOTICES</h1>
+					</div>
+					</a>
+					<a href="">
+					<div class="member" style="background-color: #80ffaa;">
+						<h1>PAPERS</h1>
+					</div></a>
+				</div>
+				<div class="row">
+					<a href="">
+					<div class="member" style="background-color: #ffff80;">
+						<h1>FACULTY</h1>
+					</div></a>
+					<a href="">
+					<div class="member" style="background-color: #ff6699;">
+						<h1>PLACEMENT</h1>
+					</div>
+					</a>
+					<a href="">
+					<div class="member" style="background-color: #66ffff;">
+						<h1><h1>NOTICES</h1></h1>
+					</div>
+					</a>
+				</div>
+			</div>
+		</div>
+{% endblock%}

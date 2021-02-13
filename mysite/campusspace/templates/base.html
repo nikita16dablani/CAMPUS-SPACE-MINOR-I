@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<script src="https://kit.fontawesome.com/fbd47bad16.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="5HVRDyxG"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">		<style>
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		background-color: #333;
+		}
+		li {
+		float: left;
+		}
+		li a {
+		display: block;
+		color: white;
+		text-align: center;
+		padding: 20px 20px;
+		text-decoration: none;
+		font-size: 19px;
+		}
+		li a:hover {
+			text-decoration: none;
+			background-color: #111;
+			color: white;
+		}
+
+
+</style>
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li><a class="active" href="{% url 'home'%}"><strong style="font-family: 'Dancing Script', cursive;letter-spacing:3px;font-size:24px;color:#00ffff;">CAMPUSPACE</strong></a></li>
+				<li><a href="{% url 'home'%}">Home</a></li>
+				<li><a href="{% url 'team'%}">Our Team</a></li>
+				<li><a href="{% url 'bullet'%}">Bulletin</a></li>
+				<li><a href="{% url 'contact'%}">Contact Us</a></li>
+
+				{% if user.is_authenticated %}
+				<li style="float: right;"><a href="{% url 'logout'%}">&nbsp;&nbsp; LogOut  </a></li>
+				<li style="float: right;"><p style="color:white;margin-top:22px;font-size:18px;">&nbsp;&nbsp;Hi,{{request.user}}</p> </li>
+				{%else%}
+				<li style="float: right;"><a href="{% url 'register'%}"><i class="fas fa-user-plus"></i>&nbsp&nbsp Sign-Up </a></li>
+				<li style="float: right;"><a href="{% url 'login'%}"><i class="fas fa-sign-in-alt"></i> &nbsp&nbsp Login</a></li>
+				{% endif%}
+			</ul>
+		</nav>
+
+  </div>
+	{% block content%}
+{%endblock%}
+
+	</body>
+</html>

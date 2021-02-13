@@ -1,0 +1,168 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content%}
+<head><style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.alert alert-success{
+		margin-bottom:0;
+		}
+		body{
+	background-color:#ffe6b3;
+		}
+		.outer{
+				display:flex;
+				align-items: center;
+				justify-content: center;
+				width:100vw;
+				height: 80vh;
+				background-color: white;
+
+		}
+		.inner{
+			background-color:  #3e3e3e;
+				height: 450px;
+				width: 730px;
+				box-shadow: 0 0 10px rgba(0,0,0,0.5);
+				border-radius: 15px;
+		}
+		.head{
+			text-transform: uppercase;
+			font-size: 40px;
+			letter-spacing: 5px;
+			color: #ff0066;
+			padding: 50px 30px;
+			width: 50%;
+			display: inline-block;
+
+		}
+		.head::after{
+			content: "";
+			position: absolute;
+			width:200px ;height:3px ;
+			top: 445px;
+
+			transform: translateX(-30%);
+			background-image: linear-gradient(to left,transparent 5%,#ff0066);
+
+		}
+		.right{
+			display: inline-block;
+			padding:  40px;
+			position: absolute;
+		}
+		input{
+				border: none;
+				border-bottom: 1px solid #ffffff ;
+				outline: none;
+				color: white;
+				height: 50px;
+				width: 290px;
+				font-family:Work Sans;
+				font-size: 18px;
+				letter-spacing: 2px;
+				background-color: #3e3e3e ;
+
+
+			}
+			button{
+				width: 80px;
+				 height: 50px;
+				 background-color:#ff0066;
+				 border:none;
+				border-radius: 7px;
+				letter-spacing: 3px;
+				cursor: pointer;
+
+			}
+			.map_outer{
+					display: inline-flex;
+
+				}
+				.connect{
+					width: 50vw;
+					height: 600px;
+
+					padding-left: 50px;
+							padding-top: 25px;
+				}
+				.loc{
+						width: 50vw;
+					height: 600px;
+
+					padding-left: 50px;
+					font-size: 24px;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					font-stretch: semi-expanded;
+							padding-top: 25px;
+					text-decoration: underline;
+
+				}
+				.connect strong{
+					font-size: 24px;
+					text-transform: uppercase;
+					letter-spacing: 3px;
+					text-decoration: underline;
+				}
+				img{
+					width: 35px;
+					height: 35px;
+				}
+
+
+
+	</style>
+	<script>
+		function myFunction() {
+  alert("Your Message is Successfully Store");
+}
+	</script>
+</head>
+<div class="outer">
+	<div class="inner">
+			<div class="head">
+				<b>Contact <br>us</b>
+			</div>
+			<div class="right">
+				<form action="{% url 'contact'%}" method="post">
+					{% csrf_token %}
+				<input type="text" name="name" required autocomplete="off" placeholder="NAME"><br><br><br>
+				<input type="email" name="email" required autocomplete="off" placeholder="EMAIL"><br><br><br>
+				<input type="text" name="msg" required autocomplete="off" placeholder="MESSAGE"><br><br><br>
+				<button type="submit" onclick="myFunction()"><b>SEND</b></button>
+				</form>
+			</div>
+	</div>
+</div>
+
+<	<div class="map_outer">
+		<div class="connect">
+			<strong>connect us </strong><br><br><br><br>
+			<p style="color:  #595959;">CampuSpace Team Is Here To Help You</p>
+			<p style="color: black;">_______________________________________________________________________</p><br><br>
+			<div class="imgs">
+				<img src="{%static '/imgs/fb.jpg'%}" >&nbsp;&nbsp;&nbsp;
+				<img src="{%static '/imgs/twitter.jpg'%}">&nbsp;&nbsp;&nbsp;
+				<img src="{%static '/imgs/linkedIn.jpg'%}">
+				<br><br>
+				<p style="color: black;">_______________________________________________________________________</p><br>
+				<b style="font-size: 12px; color: black; "><img src="{%static '/imgs/phone.jpg'%}" style="height: 15px; width: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PHONE</b><br><br><p style="color: #999999;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+91 7987000495</p>
+				<br>
+				<p style="color: black;">_______________________________________________________________________</p><br>
+				<b style="font-size: 12px; color: black; "><img src="{%static '/imgs/email.jpg'%}" style="height: 15px; width: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-MAIL</b><br><br><p style="color: #999999;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.mitujjain.org" style="text-decoration: none;color: #999999;">campuspace@gmail.com</a></p>
+				<br>
+				<p style="color: black;">_______________________________________________________________________</p><br>
+				<b style="font-size: 12px; color: black; "><img src="{%static '/imgs/web.jpg'%}" style="height: 15px; width: 15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WEB</b><br><br><p style="color: #999999;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.mitujjain.ac.in/Home/Index" style="text-decoration: none;color: #999999;">mitujjain.org</a><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="www.mitujjain.org" style="text-decoration: none;color: #999999;">campusspace.com</a></p>
+			</div>
+		</div>
+		<div class="loc">
+			<strong>our location</strong><br><br><br>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.3362806882756!2d75.89301995261143!3d23.100134574167555!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39630d60c0c92465%3A0x3814ed48f9340f85!2sMahakal%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1603283458596!5m2!1sen!2sin" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+		</div>
+	</div>
+
+{% endblock %}

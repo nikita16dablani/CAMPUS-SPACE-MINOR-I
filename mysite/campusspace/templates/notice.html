@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <style>
+    body{
+        background-color:#fff7e6;
+       font-family: 'Crimson Text', serif;
+    }
+        #heading{  font-size:5rem;
+            text-align:center;
+            text-decoration:underline;
+           font-variant: small-caps;
+           letter-spacing:7px;
+
+
+        }
+        .main{
+            display :inline-block;
+            justify-content: center;
+			    align-items: center;
+        }
+        .photos{
+            margin:20px;
+        }
+        img{
+            height : 700px;
+            width:auto;
+            cursor:pointer;
+            box-shadow:0,0,rgba(0,0,0,0.5);
+
+
+        }
+        .single{
+
+                justify-content: center;
+			    align-items: center;
+			    display :flex;
+			    float:center;
+		} hr{
+        height: 0.5px;
+        background-color: #b3b3b3;
+        border: none;
+    }
+        .content{
+               text-align:center;
+        }
+        .container1{
+            justify-content: center;
+			    align-items: center;
+			    display :flex;
+        }
+        h2{font-variant:small-caps;
+            font-weight:bold;
+        }
+        p{font-size:24px;}
+    </style>
+</head>
+ <p id="heading">NOTICES</p><hr>
+<div class="container1">
+
+
+    <div class="main">
+             {% for i in notice%}
+                <div class="content">
+
+                  <h2>{{i.name}}</h2>
+                  <p>{{i.desc}}</p>
+                </div>
+                <div class="single" >
+                    <div><img src='/media/{{i.image}}'></div>
+
+  </div>
+        <hr>{%endfor%}
+       <center> <div class="fb-comments" data-href="http://127.0.0.1:8000/notice" data-numposts="5" data-width=""></div>
+       <div class="fb-share-button" data-href="http://127.0.0.1:8000/notice" data-layout="button_count" data-size="small">
+           <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F127.0.0.1%3A8000%2Fnotice&amp;
+           src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
+       </div>
+       </center>
+    </div>
+</div>
+
+
+{%endblock%}
+
+
